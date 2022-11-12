@@ -1,0 +1,12 @@
+config:
+  target: "http://localhost:3000/api/v1"
+  phases:
+    - duration: 5 
+      arrivalRate: 100 
+scenarios:
+  - flow:
+      - post:
+          url: "/donations.donate"
+          json:
+            id: 1
+            value: 1
