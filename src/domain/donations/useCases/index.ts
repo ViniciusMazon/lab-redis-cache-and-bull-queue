@@ -1,6 +1,9 @@
-import { GetDonationsUseCase, getDonationsUseCaseFactory } from './GetDonationsUseCase'
+import { GetDonationsUseCase, getDonationsUseCaseFactory } from './GetDonationsUseCase';
+import { StoreDonationUseCase, storeDonationUseCaseFactory } from './StoreDonationUseCase';
 
 export {
     GetDonationsUseCase,
-    getDonationsUseCaseFactory
+    getDonationsUseCaseFactory,
+    StoreDonationUseCase,
+    storeDonationUseCaseFactory
 }

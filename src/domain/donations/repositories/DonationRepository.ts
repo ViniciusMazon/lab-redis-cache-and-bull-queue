@@ -8,6 +8,10 @@ class DonationRepository {
     get(id: number) {
         return this.donationModel.get(id);
     }
+
+    insert(name: string){
+        return this.donationModel.insert(name);
+    }
 }
 
 export { DonationRepository }

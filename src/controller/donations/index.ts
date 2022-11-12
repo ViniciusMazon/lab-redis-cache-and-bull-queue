@@ -1,5 +1,9 @@
-import { getDonationsControllerFactory } from "./GetDonationsController";
+import { getDonationsControllerFactory, GetDonationsController } from './GetDonationsController';
+import { StoreDonationController, storeDonationControllerFactory } from './StoreDonationController';
 
 export {
-    getDonationsControllerFactory
+    getDonationsControllerFactory,
+    GetDonationsController,
+    StoreDonationController,
+    storeDonationControllerFactory
 }
