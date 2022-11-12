@@ -1,0 +1,36 @@
+version: '3.2'
+
+services:
+  postgres:
+    container_name: pg
+    image: postgres:10.0-alpine
+    networks:
+      - lab-network
+    ports:
+      - 5432:5432
+    volumes:
+      - data:/var/lib/postgresql/data/pg_data
+    environment:
+      PGDATA: /var/lib/postgresql/data/test/
+      POSTGRES_DB: test
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_PORT: 5432
+  redis-cache:
+    container_name: redis
+    image: redis:6.2-alpine
+    environment:
+      - name=value
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning
+    networks:
+      - lab-network
+    depends_on:
+      - postgres
+networks:
+  lab-network:
+    driver: bridge
+
+volumes:
+  data:
