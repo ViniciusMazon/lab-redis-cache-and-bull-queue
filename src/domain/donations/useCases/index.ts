@@ -1,6 +1,7 @@
 import { GetDonationsUseCase, getDonationsUseCaseFactory } from './GetDonationsUseCase';
 import { StoreDonationUseCase, storeDonationUseCaseFactory } from './StoreDonationUseCase';
 import { StoreDonateUseCase, storeDonateUseCaseFactory } from './StoreDonateUseCase';
+import { GetTransactionsUseCase, getTransactionsUseCaseFactory } from './GetTransactionsUseCase';
 
 export {
     GetDonationsUseCase,
@@ -8,5 +9,7 @@ export {
     StoreDonationUseCase,
     storeDonationUseCaseFactory,
     StoreDonateUseCase,
-    storeDonateUseCaseFactory
+    storeDonateUseCaseFactory,
+    GetTransactionsUseCase,
+    getTransactionsUseCaseFactory
 }

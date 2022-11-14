@@ -9,8 +9,8 @@ class TransactionRepository {
         return this.transactionsModel.insert(name, value, donationId);
     }
 
-    getAllByDonationId(donationId: number) {
-        return this.transactionsModel.getAllByDonationId(donationId);
+    getAllByDonationId(donationId: number, limit: number, offset: number) {
+        return this.transactionsModel.getAllByDonationId(donationId, limit, offset);
     }
 }
 

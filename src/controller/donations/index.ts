@@ -1,6 +1,7 @@
 import { getDonationsControllerFactory, GetDonationsController } from './GetDonationsController';
 import { StoreDonationController, storeDonationControllerFactory } from './StoreDonationController';
-import {StoreDonateController, storeDonateControllerFactory} from './StoreDonateController';
+import { StoreDonateController, storeDonateControllerFactory } from './StoreDonateController';
+import { GetTransactionsController, getTransactionsControllerFactory } from './GetTransactionsController';
 
 export {
     getDonationsControllerFactory,
@@ -8,5 +9,7 @@ export {
     StoreDonationController,
     storeDonationControllerFactory,
     StoreDonateController,
-    storeDonateControllerFactory
+    storeDonateControllerFactory,
+    GetTransactionsController,
+    getTransactionsControllerFactory
 }
