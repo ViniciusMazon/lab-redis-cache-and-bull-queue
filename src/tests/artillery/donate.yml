@@ -10,3 +10,4 @@ scenarios:
           json:
             id: 1
             value: 1
+            name: "Artillery"
