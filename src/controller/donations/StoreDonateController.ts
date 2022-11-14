@@ -21,8 +21,12 @@ class StoreDonateController {
             return response.status(400).json({ message: 'Donation id is required' });
         }
 
+        if (!body.name) {
+            return response.status(400).json({ message: 'Name is required' });
+        }
+
         try {
-            this.queue.donation.add({ id: body.id, value: body.value });
+            this.queue.donation.add({ id: body.id, value: body.value, name: body.name });
             return response.status(201).json({ message: 'The donation is being processed and will soon be available' });
         } catch (error) {
             return response.status(500).json({ error });

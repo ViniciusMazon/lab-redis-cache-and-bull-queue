@@ -1,16 +1,16 @@
-import { DonationModel } from "../../../data/pg/models/donation/DonationModel";
+import { DonationsModel } from "../../../data/pg/models/donation/DonationsModel";
 
 class DonationRepository {
     constructor(
-        private donationModel = new DonationModel()
+        private donationsModel = new DonationsModel()
     ) { };
 
     get(id: number) {
-        return this.donationModel.get(id);
+        return this.donationsModel.get(id);
     }
 
     insert(name: string){
-        return this.donationModel.insert(name);
+        return this.donationsModel.insert(name);
     }
 }
 

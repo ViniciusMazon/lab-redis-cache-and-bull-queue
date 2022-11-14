@@ -1,12 +1,12 @@
-import {DonationModel} from '../../../data/pg/models/donation/DonationModel';
+import {DonationsModel} from '../../../data/pg/models/donation/DonationsModel';
 
 class DonateRepository {
     constructor(
-        private donationModel = new DonationModel()
+        private donationsModel = new DonationsModel()
     ){}
 
     insert(id: number, amount: number) {
-        return this.donationModel.update(id, amount);
+        return this.donationsModel.update(id, amount);
     }
 
 }

@@ -1,6 +1,6 @@
 import { Postgres } from "../../Postgres";
 
-class DonationModel {
+class DonationsModel {
     constructor(
         private postgres = Postgres.getInstance()
     ) { };
@@ -18,4 +18,4 @@ class DonationModel {
     }
 }
 
-export { DonationModel }
+export { DonationsModel }
