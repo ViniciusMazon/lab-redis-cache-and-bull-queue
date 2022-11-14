@@ -1,14 +1,9 @@
 import { Request, Response } from 'express';
-import { storeDonateUseCaseFactory } from '../../domain/donations/useCases/StoreDonateUseCase';
-import { DonateRepository } from '../../domain/donations/repositories/DonateRepository';
-import { DonationRepository } from '../../domain/donations/repositories/DonationRepository'
+import { Bull } from '../../data/redis/Bull';
 
 class StoreDonateController {
     constructor(
-        private storeDonateUseCase = storeDonateUseCaseFactory(
-            new DonationRepository(),
-            new DonateRepository()
-        )
+        private queue = Bull.getInstance(),
     ) { }
 
     async exec(request: Request, response: Response) {
@@ -27,8 +22,8 @@ class StoreDonateController {
         }
 
         try {
-            const result = await this.storeDonateUseCase.handle(body.id, body.value);
-            return response.status(201).json(result);
+            this.queue.donation.add({ id: body.id, value: body.value });
+            return response.status(201).json({ message: 'The donation is being processed and will soon be available' });
         } catch (error) {
             return response.status(500).json({ error });
         }
